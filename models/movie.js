@@ -3,34 +3,34 @@ var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
     var Movie = sequelize.define('Movie', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-            allowNull: false
-        },
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     autoIncrement: true,
+        //     primaryKey: true,
+        //     allowNull: false
+        // },
         movie_name: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING,
             allowNull: false
         },
         movie_poster: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false
         },
         movie_genre: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.TEXT('long'),
             allowNull: false
         },
         movie_time: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.STRING,
             allowNull: false
         },
         movie_plot: {
-            type: DataTypes.STRING(1000),
+            type: DataTypes.STRING,
             allowNull: false
         },
         movie_director: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING,
             allowNull: false
         },
         movie_actors: {
@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         movie_ratingRotten: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.STRING,
             allowNull: false
         },
         watched: {

@@ -6,7 +6,20 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var db = require('./models');
+var mysql = require('mysql');
+var connection;
 
+if(process.env.JAWSDB_URL) {
+    connection = mysql.createConnection
+    (process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '2019!March',
+        database: 'movies_db'
+    })
+}
 // Initialize app.
 var app = express();
 
