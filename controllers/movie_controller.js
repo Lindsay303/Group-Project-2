@@ -10,7 +10,7 @@ var db = require('../models');
 // This route then hands the data it receives to handlebars so index can be rendered.
 router.get('/', function(req, res) {
     db.Movie.findAll({
-        order: 'movie_name ASC'
+        // order: 'movie_name ASC'
 
     }).then(function(data) {
         var hbsObject = {
@@ -26,7 +26,7 @@ router.get('/year', function(req, res) {
 
     }).then(function(data) {
         var hbsObject = {
-            movies: data
+            movies: movie_name
         };
         res.render('index', hbsObject);
     });
@@ -38,7 +38,7 @@ router.get('/rating', function(req, res) {
 
     }).then(function(data) {
         var hbsObject = {
-            movies: data
+            movies: movie_name
         };
         res.render('index', hbsObject);
     });
@@ -50,7 +50,7 @@ router.post('/api/new/movie', function(req, res) {
 
     var movieName = req.body.name;
 
-    var queryUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=375d501a=" + movieName;
+    var queryUrl = "http://www.omdbapi.com/?apikey=375d501a&t=" + movieName;
 
     request(queryUrl, function(error, response, body) {
 
@@ -88,11 +88,11 @@ router.post('/api/new/movie', function(req, res) {
                     res.redirect('/')
                 } else {
                     videos = JSON.parse(result).results[0].key;
-                    console.log(videos);
+                    console.log(JSON.parse(body).Genre.length);
                     db.Movie.create({
                         movie_name: JSON.parse(body).Title,
                         movie_poster: JSON.parse(body).Poster,
-                        movie_genre: JSON.parse(body).Genre,
+                        movie_genre: JSON.parse(body).Genre.split(',')[0],
                         movie_time: JSON.parse(body).Runtime,
                         movie_plot: JSON.parse(body).Plot,
                         movie_director: JSON.parse(body).Director,

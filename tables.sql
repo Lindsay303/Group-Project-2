@@ -1,0 +1,6 @@
+CREATE TABLE movies (
+id INT AUTO_INCREMENT NOT NULL,
+description VARCHAR(250),
+createAt TIMESTAMP NOT NULL,
+PRIMARY KEY(id)
+);
