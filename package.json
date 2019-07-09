@@ -1,5 +1,5 @@
 {
-    "name": "getReel",
+    "name": "Reel Time",
     "version": "1.0.0",
     "description": "A full-stack web application built in Node, Express, and MySQL.",
     "main": "server.js",
@@ -21,12 +21,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/boyrajat/getReelTakeOne"
+        "url": "https://github.com/Lindsay303/Group-Project-2"
     },
     "author": "mchlltt",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/boyrajat/getReelTakeOne"
+        "url": "https://github.com/Lindsay303/Group-Project-2"
     },
-    "homepage": "https://github.com/boyrajat/getReelTakeOne"
+    "homepage": "https://github.com/Lindsay303/Group-Project-2"
 }
