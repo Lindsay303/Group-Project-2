@@ -1,5 +1,5 @@
 {
-    "name": "Reel Time",
+    "name": "GetReel",
     "version": "1.0.0",
     "description": "A full-stack web application built in Node, Express, and MySQL.",
     "main": "server.js",
